@@ -16,3 +16,4 @@ require_once $lib . 'og-meta.php';
 require_once $lib . 'upscale-img.php';
 require_once $lib . 'video-wrap.php';
 require_once $lib . 'admin-panel.php';
+require_once $lib . 'svg-support.php';

@@ -36,7 +36,7 @@ function adjust_the_wp_menu() {
     
     // Brugere flyttes
     remove_menu_page( 'users.php' );
-    add_submenu_page( 'options-general.php', 'Logins', 'Logins', 'manage_options', 'users.php'); 
+    add_submenu_page( 'options-general.php', 'Brugere', 'Brugere', 'manage_options', 'users.php'); 
 	
 	
 	// Indstillinger
