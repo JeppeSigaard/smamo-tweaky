@@ -64,8 +64,4 @@ function smamo_add_metas(){
     echo '<meta property="og:type" content="'. $meta_type .'">';
     echo '<meta property="og:url" content="'. $meta_url .'">';
     
-    echo '<meta property="author" content="Jeppe Sigaard">';
-    echo '<meta property="contact" content="jeppe@smartmonkey.dk">';
-
-    
 }
