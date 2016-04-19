@@ -17,7 +17,8 @@ function smamo_add_metas(){
     }
 
     // Beskrivelse
-    $meta_description =  wp_trim_words(wp_strip_all_tags(get_the_excerpt()), $num_words = 20, $more = ' ...');
+    $meta_description =  wp_trim_words(wp_strip_all_tags($post->post_excerpt), $num_words = 20, $more = ' ...');
+    if (!$meta_description){$meta_description =  wp_trim_words(wp_strip_all_tags($post->post_content), $num_words = 20, $more = ' ...');}
     
     if(is_archive() || is_category()){
         $meta_description = wp_trim_words(wp_strip_all_tags(category_description()), $num_words = 20, $more = ' ...');
