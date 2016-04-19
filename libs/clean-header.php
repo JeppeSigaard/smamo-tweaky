@@ -9,3 +9,10 @@
  remove_action('wp_head', 'start_post_rel_link', 10, 0); // Removes the random post link
  remove_action('wp_head', 'parent_post_rel_link', 10, 0); // Removes the parent post link
  remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0); // Removes the next and previous post links
+
+// Remove stylesheets from kirki / piklist
+add_action('wp_enqueue_scripts',function(){
+   wp_deregister_style('dashicons'); 
+   wp_deregister_style('editor-buttons'); 
+    
+});
