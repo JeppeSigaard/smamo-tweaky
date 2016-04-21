@@ -11,21 +11,31 @@ function smamo_add_metas(){
     global $post;
     
     // Billede
-    $meta_img = wp_get_attachment_url( get_post_thumbnail_id() );
+    $meta_img = false;
+    $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
+    
+    if ($image_url && isset($image_url[0])){
+        $meta_img = $image_url[0];
+    }
+    
     if (!$meta_img || is_home() || is_front_page()){
         $meta_img = get_header_image();
     }
 
     // Beskrivelse
-    $meta_description =  wp_trim_words(wp_strip_all_tags($post->post_excerpt), $num_words = 20, $more = ' ...');
-    if (!$meta_description){$meta_description =  wp_trim_words(wp_strip_all_tags($post->post_content), $num_words = 20, $more = ' ...');}
+    $meta_description =  wp_trim_words(wp_strip_all_tags($post->post_excerpt), $num_words = 30, $more = ' ...');
+    if (!$meta_description){
+        $meta_description =  wp_trim_words(wp_strip_all_tags($post->post_content), $num_words = 30, $more = ' ...');
+    }
     
-    if(is_archive() || is_category()){
-        $meta_description = wp_trim_words(wp_strip_all_tags(category_description()), $num_words = 20, $more = ' ...');
+    if (!$meta_description){
+        if(is_archive() || is_category()){
+            $meta_description = wp_trim_words(wp_strip_all_tags(category_description()), $num_words = 30, $more = ' ...');
+        }
     }
     
     if(!$meta_description || is_home() || is_front_page()){
-        $meta_description = wp_trim_words(get_bloginfo('description'), $num_words = 20, $more = ' ...');
+        $meta_description = wp_trim_words(get_bloginfo('description'), $num_words = 30, $more = ' ...');
     }
 
     // Link
