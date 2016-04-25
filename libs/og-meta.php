@@ -74,8 +74,8 @@ function smamo_add_metas(){
         $meta_type = 'website';
     }
     
-    echo '<meta itemprop="name" content="'. wp_title('·', false, 'right').'">';
-    echo '<meta property="og:title" content="'. wp_title('·', false, 'right').'">';
+    echo '<meta itemprop="name" content="'. $post->post_title .'">';
+    echo '<meta property="og:title" content="'. $post->post_title .'">';
     echo '<meta property="og:site_name" content="'. get_bloginfo('title') .'">';
 
     if ($meta_description) :
