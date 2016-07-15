@@ -13,3 +13,6 @@ function remove_piklist_menu($pages)
   return $pages;
 }
 add_filter('piklist_admin_pages', 'remove_piklist_menu');
+
+remove_action('wp_head', array('piklist_theme', 'version_in_header'));
+remove_action('wp_footer', array('piklist_theme', 'piklist_love'), 1000);
