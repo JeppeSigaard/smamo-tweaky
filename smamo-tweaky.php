@@ -18,6 +18,6 @@ require_once $lib . 'video-wrap.php';
 require_once $lib . 'admin-panel.php';
 require_once $lib . 'svg-support.php';
 require_once $lib . 'no-emojis.php';
-require_once $lib . 'json-api.php';
+// require_once $lib . 'json-api.php';
 require_once $lib . 'query-strings.php';
 require_once $lib . 'no-piklist.php';
